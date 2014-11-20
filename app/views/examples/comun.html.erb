@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Vista comun</title>
+</head>
+<body>
+	<div id='ingreso'>
+		<h1>Vista de comun  <%= @nombre %></h1>
+			<%= form_tag :action => 'comun' do %>
+		<p>Nombre: 
+		<%= text_field_tag 'nombre_usuario', @name %></p>
+		<p>Email:
+		<%= text_field_tag 'email_usuario', @email %></p>
+		<%= submit_tag 'Registar' %>
+		<% end %>
+	</div>	
+	<%= @nombres.each do |n| %>
+		<p><%= n.nombre %></p>
+	<% end %>
+</body>
+<footer>vista de controlador example</footer>
+</html>
