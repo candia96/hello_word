@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :articles
+
   get 'examples/comun'
 
   get 'welcome/index'
