@@ -5,13 +5,11 @@
 <body>
 	<%= form_for(@user) do |u| %>
 	<div class='field'>
-		<% nombres = {'Juan Candia'=>'Juan', 'Cualquier cosa'=>'cualquiercosa','email'=>'email'} %>	
+		<% nombres = {'Ramon Candia'=>'Juan', 'Cualquier cosa'=>'cualquiercosa','email'=>'email'} %>	
 		<fieldset>
-			<% lista = nombres.sort %>
-			<% lista.each do |nombre| %>
-				<%= u.radio_button :nombre, nombre[1] %>
-				<label  for="<%= nombre[1] %>"> <%= nombre[0] %></label>
-			<% end %>	
+				<% lista = nombres.sort %>
+				<%= u.label :nombre  %>
+				<%= u.select :nombre, lista  %>
 		</fieldset>
 
 	</div>
@@ -28,9 +26,17 @@
 		<%= u.check_box :programa, checked: "checked" %>
 	</div>
 	<div class='field'>
-	
+		<%= u.label :cumpleanos  %>
+		<%= u.date_select :cumpleanos, start_year: 1990, end_year: 2014  %>
 	</div>	
 <% end %>
+
+<% a= 'hola'  %>
+		<% if is_number?(a)  %>
+			<b><%= a %></b>
+			<% else  %>
+				<b>Enviaste palabras</b>
+		<% end %>	
 
 </body>
 </html>
